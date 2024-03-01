@@ -1,0 +1,39 @@
+name: birthday_app
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=3.2.4 <4.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.6.6
+  flutter: 
+    sdk: flutter
+  shared_preferences: ^2.2.2
+  shimmer: ^3.0.0
+  # firebase_auth: ^4.16.0
+  # cloud_firestore: ^4.14.0
+  # firebase_storage: ^11.6.0
+  fluttertoast: ^8.2.4
+  logger: ^2.0.2+1
+  google_fonts: ^6.1.0
+  flutter_svg: ^2.0.10+1
+  syncfusion_flutter_calendar: ^24.2.8
+  flutter_event_calendar: ^1.0.0
+  table_calendar: ^3.1.0
+
+dev_dependencies: 
+  flutter_lints: ^2.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+
+
