@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../modules/new_password/views/new_password_view.dart';
 import '../modules/about_child/bindings/about_child_binding.dart';
 import '../modules/about_child/views/about_child_view.dart';
 import '../modules/create_account/bindings/create_account_binding.dart';
@@ -44,7 +45,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.DASHBOARD;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
     GetPage(
@@ -93,6 +94,11 @@ class AppPages {
     GetPage(
       name: _Paths.VARIFICATION,
       page: () => const VarificationView(),
+      binding: VarificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.NEW_PASSWORD,
+      page: () => const NewPasswordView(),
       binding: VarificationBinding(),
     ),
     GetPage(
