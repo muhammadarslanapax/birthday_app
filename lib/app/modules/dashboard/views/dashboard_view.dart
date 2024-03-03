@@ -12,7 +12,6 @@ class DashboardView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.sizeOf(context).width;
-    final double height = MediaQuery.sizeOf(context).height;
     return GetBuilder<DashboardController>(builder: (obj) {
       return Scaffold(
           bottomNavigationBar: SizedBox(

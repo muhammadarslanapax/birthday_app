@@ -1,11 +1,21 @@
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  late PageController pageController;
+  int currentIndex = 0;
 
-  final count = 0.obs;
+  List upcomingReminders = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+  ];
+
   @override
   void onInit() {
+    pageController = PageController(initialPage: 0);
     super.onInit();
   }
 
@@ -18,6 +28,4 @@ class HomeController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }
