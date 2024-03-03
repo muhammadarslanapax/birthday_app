@@ -1,9 +1,11 @@
+import 'package:birthday_app/app/routes/app_pages.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ForgotPasswordController extends GetxController {
-  //TODO: Implement ForgotPasswordController
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  TextEditingController emailController = TextEditingController();
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -19,5 +21,9 @@ class ForgotPasswordController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  sendOtp() {
+    if (formKey.currentState!.validate()) {
+      Get.offNamed(Routes.VARIFICATION);
+    }
+  }
 }

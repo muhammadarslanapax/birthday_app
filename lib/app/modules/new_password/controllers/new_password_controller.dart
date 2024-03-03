@@ -1,12 +1,15 @@
 import 'package:birthday_app/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-class LoginEmailController extends GetxController {
+class NewPasswordController extends GetxController {
   bool showPassword = false;
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  TextEditingController emailController = TextEditingController();
+  bool startLoading = false;
+
   TextEditingController passwordController = TextEditingController();
+  TextEditingController confPasswordController = TextEditingController();
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   void onInit() {
@@ -28,9 +31,15 @@ class LoginEmailController extends GetxController {
     update();
   }
 
-  login() {
+  showLoading() {
     if (formKey.currentState!.validate()) {
-      Get.offAllNamed(Routes.ABOUT_CHILD);
+      startLoading = true;
+      update();
+      Future.delayed(const Duration(seconds: 3), () {
+        startLoading = false;
+        update();
+        Get.offNamed(Routes.LOGIN_EMAIL);
+      });
     }
   }
 }

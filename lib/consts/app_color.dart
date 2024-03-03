@@ -7,7 +7,8 @@ class AppColor {
   static const Color btnwhite = Color(0xffF8F7F7);
   static const Color btngrey = Color(0xff646464);
   static const Color bordercolor = Color(0xffADAAAA);
-  static  Color hintcolor = Colors.black.withOpacity(0.3);
+  static const Color loadingGreen = Color(0xFF25C8A8);
+  static Color hintcolor = Colors.black.withOpacity(0.3);
   static const Color black = Colors.black;
   static const Color white = Colors.white;
   static const Color grey = Colors.grey;

@@ -43,7 +43,7 @@ class SplashController extends GetxController
 
   _goToNextScreen() {
     Future.delayed(Duration(seconds: 3), () {
-      Get.offAllNamed(Routes.DASHBOARD);
+      Get.offAllNamed(Routes.LANGUAGE_SELECTION);
     });
   }
 

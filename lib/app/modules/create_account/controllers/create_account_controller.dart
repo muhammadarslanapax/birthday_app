@@ -1,9 +1,15 @@
+import 'package:birthday_app/app/routes/app_pages.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CreateAccountController extends GetxController {
-  //TODO: Implement CreateAccountController
+  bool showPassword = false;
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confPasswordController = TextEditingController();
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -19,5 +25,14 @@ class CreateAccountController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  visibility() {
+    showPassword = !showPassword;
+    update();
+  }
+
+  signUp() {
+    if (formKey.currentState!.validate()) {
+      Get.offAllNamed(Routes.ABOUT_CHILD);
+    }
+  }
 }

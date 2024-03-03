@@ -10,6 +10,7 @@ abstract class Routes {
   static const CREATE_ACCOUNT = _Paths.CREATE_ACCOUNT;
   static const FORGOT_PASSWORD = _Paths.FORGOT_PASSWORD;
   static const VARIFICATION = _Paths.VARIFICATION;
+  static const NEW_PASSWORD = _Paths.NEW_PASSWORD;
   static const ABOUT_CHILD = _Paths.ABOUT_CHILD;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const HOME = _Paths.DASHBOARD + _Paths.HOME;
@@ -39,6 +40,7 @@ abstract class _Paths {
   static const CREATE_ACCOUNT = '/create-account';
   static const FORGOT_PASSWORD = '/forgot-password';
   static const VARIFICATION = '/varification';
+  static const NEW_PASSWORD = '/new-password';
   static const ABOUT_CHILD = '/about-child';
   static const DASHBOARD = '/dashboard';
   static const HOME = '/home';
