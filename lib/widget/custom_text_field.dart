@@ -1,10 +1,12 @@
 import 'package:birthday_app/consts/app_color.dart';
+import 'package:birthday_app/utils/style.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class RectangularTextFormField extends StatelessWidget {
   final int? maxline;
   final double? height;
+  final double? hintSize;
   final double? borderradius;
   final double? borderwidth;
   final double? focusborderwidth;
@@ -29,6 +31,7 @@ class RectangularTextFormField extends StatelessWidget {
   final TextInputType? keyboardtype;
   final TextInputAction? inputaction;
   final AutovalidateMode? autoValidateMode;
+  void Function()? onTap;
   void Function(String)? onChanged;
   final TextEditingController? controller;
   final String? Function(String?)? validation;
@@ -37,6 +40,7 @@ class RectangularTextFormField extends StatelessWidget {
     super.key,
     this.maxline,
     this.height,
+    this.hintSize,
     this.borderradius,
     this.borderwidth,
     this.focusborderwidth,
@@ -61,6 +65,7 @@ class RectangularTextFormField extends StatelessWidget {
     this.keyboardtype,
     this.inputaction,
     this.autoValidateMode,
+    this.onTap,
     this.onChanged,
     this.controller,
     this.validation,
@@ -72,6 +77,7 @@ class RectangularTextFormField extends StatelessWidget {
 
     return TextFormField(
       controller: controller,
+      onTap: onTap,
       obscureText: obscureText ?? false,
       cursorColor: cursorcolor ?? Colors.black,
       maxLines: /*obscureText == true ? 1 :*/ maxline ?? 1,
@@ -96,7 +102,9 @@ class RectangularTextFormField extends StatelessWidget {
                 ),
               )
             : null,
-        hintStyle: TextStyle(color: hintcolor),
+        hintStyle: TextStyle(
+            color: hintcolor,
+            fontSize: hintSize ?? AppStyle.smallsize(context)),
 
         filled: true,
         fillColor: isEnabled == false ? Colors.grey : Colors.white,
