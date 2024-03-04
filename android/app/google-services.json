@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "634234166008",
+    "project_id": "homegram-9da3e",
+    "storage_bucket": "homegram-9da3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634234166008:android:78f7d487cb47e0a643b90d",
+        "android_client_info": {
+          "package_name": "com.babycare.birthday_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634234166008-6esquiqttdtebv0hbkcclbr8sosamr30.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpRoGSUYXPkYMRD2xf33WC2IxdRSE0fXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634234166008-6esquiqttdtebv0hbkcclbr8sosamr30.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "634234166008-fnalbjfjnc4ik4gq9jl2mgb4ipjq921t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634234166008:android:939f732040eb6fad43b90d",
+        "android_client_info": {
+          "package_name": "com.homeglam.homeglam_business"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634234166008-hvjn3ln1m7855vovgcsma4bpqg0q67ud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.homeglam.homeglam_business",
+            "certificate_hash": "ac3892f19ed4e89b59bfd496b27cda32cf4b7317"
+          }
+        },
+        {
+          "client_id": "634234166008-6esquiqttdtebv0hbkcclbr8sosamr30.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpRoGSUYXPkYMRD2xf33WC2IxdRSE0fXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634234166008-6esquiqttdtebv0hbkcclbr8sosamr30.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "634234166008-fnalbjfjnc4ik4gq9jl2mgb4ipjq921t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634234166008:android:e9416f63bb2bb51343b90d",
+        "android_client_info": {
+          "package_name": "com.sixamtech.sixam_mart_user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634234166008-6esquiqttdtebv0hbkcclbr8sosamr30.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpRoGSUYXPkYMRD2xf33WC2IxdRSE0fXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634234166008-6esquiqttdtebv0hbkcclbr8sosamr30.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "634234166008-fnalbjfjnc4ik4gq9jl2mgb4ipjq921t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
