@@ -18,7 +18,7 @@ class PrivacyPolicyView extends GetView<PrivacyPolicyController> {
               onPressed: () {
                 Get.back();
               },
-              icon: const Icon(Icons.keyboard_arrow_left)),
+              icon: Icon(Icons.adaptive.arrow_back)),
         ),
         body: SizedBox(
           width: width,

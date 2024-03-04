@@ -20,6 +20,13 @@ class EditChildInfoView extends GetView<EditChildInfoController> {
     final double height = MediaQuery.sizeOf(context).height;
     return SafeArea(
       child: Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+                onPressed: () {
+                  Get.back();
+                },
+                icon: Icon(Icons.adaptive.arrow_back)),
+          ),
           resizeToAvoidBottomInset: false,
           body: GetBuilder<EditChildInfoController>(
               init: EditChildInfoController(),
