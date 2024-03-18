@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'package:birthday_app/services/firebase_instance.dart';
+import 'package:birthday_app/services/internet_connectivity.dart';
 import 'package:birthday_app/theme/theme.dart';
 import 'package:birthday_app/utils/sharepreference_helper.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,4 @@ Future main() async {
     ),
   );
   SharedPreferencesHelper.initialize();
-
-  FirebaseService firebaseService = FirebaseService();
 }

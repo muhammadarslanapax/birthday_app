@@ -13,8 +13,7 @@ class LanguageSelectionView extends GetView<LanguageSelectionController> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       body: GetBuilder<LanguageSelectionController>(
           init: LanguageSelectionController(),
           builder: (obj) {
@@ -132,6 +131,6 @@ class LanguageSelectionView extends GetView<LanguageSelectionController> {
               ),
             );
           }),
-    ));
+    );
   }
 }

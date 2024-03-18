@@ -1,4 +1,5 @@
 import 'package:birthday_app/consts/app_color.dart';
+import 'package:birthday_app/services/internet_connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -34,9 +35,6 @@ class DialogHelper {
     );
   }
 
-  //show toast
-  //show snack bar
-  //show loading
   static void showLoading([String? message]) {
     Get.dialog(
       Dialog(
@@ -50,8 +48,42 @@ class DialogHelper {
               ),
               const Spacer(),
               const SizedBox(height: 8),
-              Text(message ?? 'Please wait...',style: TextStyle(color: AppColor.primary),),
+              Text(
+                message ?? 'Please wait...',
+                style: TextStyle(color: AppColor.primary),
+              ),
               const Spacer(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+// dialog for nointernet
+
+  static void showNoInterNet() {
+    Get.dialog(
+      Dialog(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "No Internet",
+                style: Get.textTheme.headlineMedium,
+              ),
+              Text(
+                'Please try again !',
+                style: Get.textTheme.titleLarge,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  ConnectivityService.checkInternetConnectivity();
+                },
+                child: const Text('Refresh'),
+              ),
             ],
           ),
         ),

@@ -1,4 +1,10 @@
+import 'package:birthday_app/app/models/child_model.dart';
 import 'package:birthday_app/app/routes/app_pages.dart';
+import 'package:birthday_app/consts/const.dart';
+import 'package:birthday_app/services/firebase_service.dart';
+import 'package:birthday_app/static_data.dart';
+import 'package:birthday_app/utils/logger.dart';
+import 'package:birthday_app/utils/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,7 +14,13 @@ class AboutChildController extends GetxController {
   bool isPremie = false;
   bool startLoading = false;
   String? title = Get.arguments;
-  DateTime? selectedDate;
+  DateTime selectedDate = DateTime.now();
+  DateTime expectedDate = DateTime.now();
+
+  changeborn(val) {
+    isBorn = val;
+    update();
+  }
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
@@ -35,18 +47,33 @@ class AboutChildController extends GetxController {
     if (formKey.currentState!.validate()) {
       startLoading = true;
       update();
-      Future.delayed(const Duration(seconds: 3), () {
+
+      ChildDataModel childDataModel = ChildDataModel(
+          uuid: StaticData.uuid,
+          isBornyet: isBorn,
+          gender: isBorn,
+          name: nameController.text.capitalize,
+          bornDate: dateOfBirthController.text,
+          premine: isPremie,
+          expectedDate: expectedDeliveryDateController.text);
+
+      try {
+        FirebaseService.addChild(childDataModel);
+        Get.offNamed(Routes.DASHBOARD);
+        showtoast(message: childadd, isError: false);
+      } catch (e) {
+        showtoast(message: errormessege, isError: true);
+      } finally {
         startLoading = false;
         update();
-        Get.offNamed(Routes.DASHBOARD);
-      });
+      }
     }
   }
 
 //.....................Select Date................................
 
-  Future<void> selectDate(
-      BuildContext context, TextEditingController controller) async {
+  Future<void> selectDate(BuildContext context,
+      TextEditingController controller, DateTime dateTime) async {
     String monthName(int month) {
       const monthNames = [
         'Jan',
@@ -66,27 +93,16 @@ class AboutChildController extends GetxController {
     }
 
     final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: selectedDate ?? DateTime.now(),
-      firstDate: DateTime(2010),
-      lastDate: DateTime(2100),
-      builder: (context, child) {
-        return Column(
-          children: <Widget>[
-            Spacer(),
-            SizedBox(
-              height: 400,
-              child: child,
-            ),
-            Spacer(),
-          ],
-        );
-      },
-    );
-    if (picked != null && picked != selectedDate) {
-      selectedDate = picked;
+        context: context,
+        firstDate: DateTime(2010),
+        lastDate: DateTime(2100),
+        initialDate: DateTime.now());
+
+    if (picked != null) {
+      dateTime = picked;
+
       controller.text =
-          '${monthName(selectedDate!.month)} ${selectedDate!.day} ${selectedDate!.year}';
+          '${monthName(dateTime!.month)} ${dateTime!.day} ${dateTime!.year}';
       update();
     }
   }

@@ -2,18 +2,18 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
-class FirebaseService {
-  static final FirebaseService _instance = FirebaseService._internal();
+class FirebaseInstance {
+  static final FirebaseInstance _instance = FirebaseInstance._internal();
 
   late FirebaseAuth _auth;
   late FirebaseFirestore _firestore;
   late FirebaseStorage _storage;
 
-  factory FirebaseService() {
+  factory FirebaseInstance() {
     return _instance;
   }
 
-  FirebaseService._internal() {
+  FirebaseInstance._internal() {
     _auth = FirebaseAuth.instance;
     _firestore = FirebaseFirestore.instance;
     _storage = FirebaseStorage.instance;

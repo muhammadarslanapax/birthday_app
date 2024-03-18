@@ -1,9 +1,13 @@
+import 'package:birthday_app/app/models/child_model.dart';
 import 'package:birthday_app/app/modules/dashboard/calender/views/calender_view.dart';
+import 'package:birthday_app/app/modules/dashboard/home/controllers/home_controller.dart';
 import 'package:birthday_app/app/modules/dashboard/home/views/home_view.dart';
 import 'package:birthday_app/app/modules/dashboard/notification/views/notification_view.dart';
+import 'package:birthday_app/app/modules/dashboard/setting/edit_childInfo/controllers/edit_child_info_controller.dart';
 import 'package:birthday_app/app/modules/dashboard/setting/views/setting_view.dart';
 import 'package:birthday_app/consts/app_color.dart';
 import 'package:birthday_app/consts/const.dart';
+import 'package:birthday_app/services/internet_connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -33,8 +37,8 @@ class DashboardController extends GetxController {
         activeIcon: SvgPicture.asset(
           fit: BoxFit.cover,
           "assets/icons/home_icon.svg",
-          width: 30,
-          height: 30,
+          width: 25,
+          height: 25,
           color: AppColor.black,
         ),
         label: home),
@@ -49,8 +53,8 @@ class DashboardController extends GetxController {
         activeIcon: SvgPicture.asset(
           fit: BoxFit.cover,
           "assets/icons/calender_icon.svg",
-          width: 30,
-          height: 30,
+          width: 25,
+          height: 25,
           color: AppColor.black,
         ),
         label: calender),
@@ -65,8 +69,8 @@ class DashboardController extends GetxController {
         activeIcon: SvgPicture.asset(
           fit: BoxFit.cover,
           "assets/icons/notifications_icon.svg",
-          width: 30,
-          height: 30,
+          width: 25,
+          height: 25,
           color: AppColor.black,
         ),
         label: notification),
@@ -81,15 +85,17 @@ class DashboardController extends GetxController {
         activeIcon: SvgPicture.asset(
           fit: BoxFit.cover,
           "assets/icons/setting_icon.svg",
-          width: 30,
+          width: 25,
           color: AppColor.black,
-          height: 30,
+          height: 25,
         ),
         label: setting),
   ];
 
   @override
   void onInit() {
+    // ConnectivityService.connectivity();
+
     super.onInit();
   }
 

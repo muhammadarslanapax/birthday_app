@@ -13,8 +13,7 @@ class LoginView extends GetView<LoginController> {
   Widget build(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
     double height = MediaQuery.sizeOf(context).height;
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       body: GetBuilder<LoginController>(
           init: LoginController(),
           builder: (obj) {
@@ -84,7 +83,7 @@ class LoginView extends GetView<LoginController> {
               ),
             );
           }),
-    ));
+    );
   }
 }
 

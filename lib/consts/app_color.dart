@@ -16,4 +16,5 @@ class AppColor {
   static Color lightgrey = Colors.grey.withOpacity(0.5);
   static const Color red = Colors.red;
   static const Color icon = Color(0xff505050);
+  static const Color green = Colors.green;
 }

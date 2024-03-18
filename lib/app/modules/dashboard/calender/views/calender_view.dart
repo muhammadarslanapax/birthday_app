@@ -1,7 +1,11 @@
+import 'package:birthday_app/app/routes/app_pages.dart';
 import 'package:birthday_app/consts/app_color.dart';
 import 'package:birthday_app/consts/const.dart';
+import 'package:birthday_app/services/firebase_service.dart';
 import 'package:birthday_app/utils/style.dart';
+import 'package:birthday_app/utils/toast.dart';
 import 'package:birthday_app/widget/cText.dart';
+import 'package:birthday_app/widget/custom_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -74,7 +78,7 @@ class CalenderView extends GetView<CalenderController> {
                     headerStyle: const HeaderStyle(
                         formatButtonVisible: false, titleCentered: true),
                   ),
-                )
+                ),
               ],
             ),
           ),
