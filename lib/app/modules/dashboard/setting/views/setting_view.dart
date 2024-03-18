@@ -32,14 +32,13 @@ class SettingView extends GetView<SettingController> {
                             child: DropdownButton(
                                 icon: Icon(
                                   Icons.keyboard_arrow_down,
-                                  size: width * 0.08,
+                                  size: AppStyle.size(context, 29),
                                 ),
                                 items: [
                                   DropdownMenuItem(
                                     child: CText(
                                       text: 'Kyle',
-                                      fontsize:
-                                          AppStyle.subheadingsize(context) + 1,
+                                      fontsize: AppStyle.size(context, 19),
                                     ),
                                   ),
                                 ],
@@ -49,7 +48,7 @@ class SettingView extends GetView<SettingController> {
                           alignment: Alignment.center,
                           child: CText(
                             text: 'Settings',
-                            fontsize: AppStyle.headingsize(context) + 2,
+                            fontsize: AppStyle.size(context, 26),
                           ),
                         ),
                         Container(
@@ -93,7 +92,8 @@ class SettingView extends GetView<SettingController> {
                                                 ),
                                                 Icon(
                                                   Icons.add,
-                                                  size: width * 0.02,
+                                                  size:
+                                                      AppStyle.size(context, 8),
                                                   color: AppColor.grey,
                                                 ),
                                               ],
@@ -141,7 +141,8 @@ class SettingView extends GetView<SettingController> {
                                                 ),
                                                 Icon(
                                                   Icons.edit_outlined,
-                                                  size: width * 0.02,
+                                                  size:
+                                                      AppStyle.size(context, 8),
                                                   color: AppColor.grey,
                                                 ),
                                               ],
@@ -166,7 +167,9 @@ class SettingView extends GetView<SettingController> {
                                   height: height * 0.05,
                                   alignment: Alignment.center,
                                   child: InkWell(
-                                    onTap: () {},
+                                    onTap: () {
+                                      print(width);
+                                    },
                                     child: Row(
                                       children: [
                                         SizedBox(
@@ -243,7 +246,7 @@ class SettingView extends GetView<SettingController> {
                                             width: width * 0.06,
                                             child: Icon(
                                               Icons.info,
-                                              size: width * 0.06,
+                                              size: AppStyle.size(context, 21),
                                               color: AppColor.grey,
                                             )),
                                         SizedBox(

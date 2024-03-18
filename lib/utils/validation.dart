@@ -25,7 +25,7 @@ class GetValidation {
 
   static String? emaiValidation(TextEditingController controller) {
     if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
-        .hasMatch(controller.text)) {
+        .hasMatch(controller.text.trim())) {
       return 'Please enter a valid email';
     }
     return null;

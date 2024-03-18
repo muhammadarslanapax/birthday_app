@@ -3,6 +3,7 @@ import 'package:birthday_app/consts/app_color.dart';
 import 'package:birthday_app/utils/style.dart';
 import 'package:birthday_app/widget/cText.dart';
 import 'package:birthday_app/widget/custom_button_widget.dart';
+import 'package:birthday_app/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/varification_controller.dart';
@@ -48,6 +49,74 @@ class VarificationView extends GetView<VarificationController> {
                         fontsize: AppStyle.bodysize(context),
                       ),
                     ),
+                    SizedBox(
+                      width: width * 0.7,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: RectangularTextFormField(
+                              controller: obj.controllers[0],
+                              focusNode: obj.focusNodes[0],
+                              maxLength: 1,
+                              borderradius: width * 0.2,
+                              horizontalPadding: width * 0.048,
+                              keyboardtype: TextInputType.number,
+                              onChanged: (value) {
+                                obj.onChanged(context, 0);
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: width * 0.065,
+                          ),
+                          Expanded(
+                            child: RectangularTextFormField(
+                              controller: obj.controllers[1],
+                              focusNode: obj.focusNodes[1],
+                              maxLength: 1,
+                              borderradius: width * 0.2,
+                              horizontalPadding: width * 0.048,
+                              keyboardtype: TextInputType.number,
+                              onChanged: (value) {
+                                obj.onChanged(context, 1);
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: width * 0.065,
+                          ),
+                          Expanded(
+                            child: RectangularTextFormField(
+                              controller: obj.controllers[2],
+                              focusNode: obj.focusNodes[2],
+                              maxLength: 1,
+                              borderradius: width * 0.2,
+                              horizontalPadding: width * 0.048,
+                              keyboardtype: TextInputType.number,
+                              onChanged: (value) {
+                                obj.onChanged(context, 2);
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: width * 0.065,
+                          ),
+                          Expanded(
+                            child: RectangularTextFormField(
+                              controller: obj.controllers[3],
+                              focusNode: obj.focusNodes[3],
+                              maxLength: 1,
+                              borderradius: width * 0.2,
+                              horizontalPadding: width * 0.048,
+                              keyboardtype: TextInputType.number,
+                              onChanged: (value) {
+                                obj.onChanged(context, 3);
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                     // VerificationCode(
                     //   onCompleted: (value) {},
                     //   onEditing: (value) {},
@@ -79,7 +148,7 @@ class VarificationView extends GetView<VarificationController> {
                     ),
                     CButton(
                       ontab: () {
-                        Get.offNamed(Routes.NEW_PASSWORD);
+                        obj.verifyCode();
                       },
                       text: 'Confirm',
                     ),

@@ -82,7 +82,7 @@ class EditChildInfoView extends GetView<EditChildInfoController> {
                                   },
                                   icon: Icon(
                                     Icons.keyboard_arrow_down,
-                                    size: width * 0.08,
+                                    size: AppStyle.size(context, 29),
                                   ),
                                   items: obj.childList
                                       .asMap()
@@ -93,9 +93,7 @@ class EditChildInfoView extends GetView<EditChildInfoController> {
                                       value: value.name,
                                       child: CText(
                                         text: value.name,
-                                        fontsize:
-                                            AppStyle.subheadingsize(context) +
-                                                1,
+                                        fontsize: AppStyle.size(context, 19),
                                       ),
                                     );
                                   }).toList(),

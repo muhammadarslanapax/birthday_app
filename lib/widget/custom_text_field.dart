@@ -5,10 +5,13 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class RectangularTextFormField extends StatelessWidget {
   final int? maxline;
+  final int? maxLength;
   final double? height;
   final double? hintSize;
   final double? borderradius;
   final double? borderwidth;
+  final double? horizontalPadding;
+  final double? verticalPadding;
   final double? focusborderwidth;
   final String? hint;
   final String? label;
@@ -17,6 +20,7 @@ class RectangularTextFormField extends StatelessWidget {
   final bool? filled;
   final bool? isCollapsed;
   final bool? isDense;
+
   final bool? isEnabled;
   final bool? readOnly;
   final Color? fillColor;
@@ -28,6 +32,7 @@ class RectangularTextFormField extends StatelessWidget {
   final Color? cursorcolor;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
+  final FocusNode? focusNode;
   final TextInputType? keyboardtype;
   final TextInputAction? inputaction;
   final AutovalidateMode? autoValidateMode;
@@ -39,10 +44,13 @@ class RectangularTextFormField extends StatelessWidget {
   RectangularTextFormField({
     super.key,
     this.maxline,
+    this.maxLength,
     this.height,
     this.hintSize,
     this.borderradius,
     this.borderwidth,
+    this.horizontalPadding,
+    this.verticalPadding,
     this.focusborderwidth,
     this.hint,
     this.label,
@@ -62,6 +70,7 @@ class RectangularTextFormField extends StatelessWidget {
     this.cursorcolor,
     this.suffixIcon,
     this.prefixIcon,
+    this.focusNode,
     this.keyboardtype,
     this.inputaction,
     this.autoValidateMode,
@@ -78,6 +87,8 @@ class RectangularTextFormField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       onTap: onTap,
+      focusNode: focusNode,
+      maxLength: maxLength,
       obscureText: obscureText ?? false,
       cursorColor: cursorcolor ?? Colors.black,
       maxLines: /*obscureText == true ? 1 :*/ maxline ?? 1,
@@ -105,12 +116,14 @@ class RectangularTextFormField extends StatelessWidget {
         hintStyle: TextStyle(
             color: hintcolor,
             fontSize: hintSize ?? AppStyle.smallsize(context)),
-
+        counterText: '',
         filled: true,
         fillColor: isEnabled == false ? Colors.grey : Colors.white,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
-        contentPadding: const EdgeInsets.fromLTRB(20.0, 10, 20.0, 10),
+        contentPadding: EdgeInsets.symmetric(
+            horizontal: horizontalPadding ?? 20.0,
+            vertical: verticalPadding ?? 10),
         errorMaxLines: 2,
         isCollapsed: isCollapsed ?? false,
         isDense: isDense,

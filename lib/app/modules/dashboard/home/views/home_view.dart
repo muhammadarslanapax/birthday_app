@@ -63,7 +63,7 @@ class HomeView extends GetView<HomeController> {
                           DropdownMenuItem(
                             child: CText(
                               text: 'Kyle',
-                              fontsize: AppStyle.subheadingsize(context) + 1,
+                              fontsize: AppStyle.size(context, 19),
                             ),
                           )
                         ],
@@ -79,21 +79,21 @@ class HomeView extends GetView<HomeController> {
                     children: [
                       CText(
                         text: '1 Year',
-                        fontsize: AppStyle.headingsize(context) + 10,
+                        fontsize: AppStyle.size(context, 34),
                       ),
                       CText(
                         text: '6 Month',
-                        fontsize: AppStyle.headingsize(context) + 6,
+                        fontsize: AppStyle.size(context, 30),
                       ),
                       CText(
                         text: '5 Days',
-                        fontsize: AppStyle.headingsize(context) + 2,
+                        fontsize: AppStyle.size(context, 26),
                       ),
                     ],
                   ),
                 ),
                 Container(
-                  height: height * 0.1,
+                  height: height * 0.08,
                   alignment: Alignment.center,
                   child: CText(
                     text: 'Upcoming Milestones',
@@ -114,7 +114,7 @@ class HomeView extends GetView<HomeController> {
                   ),
                 ),
                 SizedBox(
-                  height: height * 0.02,
+                  height: height * 0.015,
                 ),
                 Container(
                   height: height * 0.23,
@@ -129,7 +129,7 @@ class HomeView extends GetView<HomeController> {
                     children: [
                       CText(
                         text: 'Food',
-                        fontsize: AppStyle.subheadingsize(context) + 1,
+                        fontsize: AppStyle.size(context, 19),
                         fontWeight: bold,
                       ),
                       SizedBox(
@@ -138,14 +138,12 @@ class HomeView extends GetView<HomeController> {
                       CText(
                         text:
                             'Kyle is almost ready to start eating solids at the 6 month mark. Ensure to Plan...',
-                        fontsize: AppStyle.bodysize(context) + 1,
+                        fontsize: AppStyle.size(context, 17),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: height * 0.02,
-                ),
+                Spacer(),
                 Center(
                   child: Wrap(
                     children: list.asMap().entries.map((e) {
@@ -161,7 +159,8 @@ class HomeView extends GetView<HomeController> {
                       );
                     }).toList(),
                   ),
-                )
+                ),
+                Spacer(),
               ],
             )));
   }
